@@ -12,6 +12,15 @@
     ">
     
 	<bean id="urlService" class="com.dwk.spider.service.UrlService">
+	    <property name="config">
+	        <list>
+	            <map>
+	                <entry key="url">http://ps4.tgbus.com/news/</entry>
+	                <entry key="regexList"><![CDATA[<div class="list"><ul>(.+?)</ul></div>]]></entry>
+	                <entry key="regexUrl"><![CDATA[<li><cite>.*?</cite>.*?<a href="([^"]*)".*?</a>.*?</li>]]></entry>
+	            </map>
+	        </list>
+	    </property>
 	</bean>
     
 </beans>
