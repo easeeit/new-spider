@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/context	
+    http://www.springframework.org/schema/context/spring-context-3.1.xsd
+    http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-3.1.xsd 
+    ">
+    
+    <import resource="classpath*:/spring/spring-*.xml"/>
+
+	<!-- 使Spring注解 -->
+	<context:annotation-config />
+	
+	<!-- 让Spring通过自动扫描来查询和管理Bean -->
+	<context:component-scan base-package="com.dwk" />
+	
+	<!-- 外部加载配置信息 -->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:config/system.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="cache" class="com.dwk.spider.common.Cache">
+		<property name="nodeList" value="${memcached.nodelist}" />
+		<property name="weightList" value="${memcached.weight.list}" />
+		<property name="initConn" value="${memcached.init.conn}" />
+		<property name="maxConn" value="${memcached.max.conn}" />
+		<property name="minConn" value="${memcached.min.conn}" />
+		<property name="name" value="${memcached.name}" />
+	</bean>
+
+	<!-- orm 支持 -->
+	<bean id="dao" class="com.dwk.spider.dao.MongodbDao">
+		<property name="mongo">
+			<bean class="com.lenovo.supernote.orm.db.MongoDao">
+				<property name="dbClientBeanFactory" ref="dbClientBeanFactory" />
+				<property name="mongoSQLService" ref="mongoSQLService" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="dbClientBeanFactory" class="com.lenovo.supernote.orm.DBClientBeanFactory">
+		<property name="configLocations">
+			<list>
+			</list>
+		</property>
+		<property name="dbCRUDClient">
+			<bean class="com.lenovo.supernote.orm.db.client.mongo.MongoCRUDClient">
+				<property name="mongoManager">
+					<bean class="com.lenovo.supernote.orm.db.client.mongo.MongoManager">
+						<constructor-arg name="nodeiplist" value="${mongo.db.nodeiplist}" />
+						<constructor-arg name="nodeportlist" value="${mongo.db.nodeportlist}" />
+						<constructor-arg name="dbName" value="${mongo.db.dbname}" />
+						<constructor-arg name="userName" value="${mongo.db.username}" />
+						<constructor-arg name="passWord" value="${mongo.db.password}" />
+						<constructor-arg name="connectionsPerHost" value="${mongo.db.connectionsperhost}" />
+						<constructor-arg name="threadsAllowedToBlock" value="${mongo.db.threadsallowedtoblock}" />
+						<constructor-arg name="connectionTimeOut" value="${mongo.db.connectiontimeout}" />
+						<constructor-arg name="maxRetryTime" value="${mongo.db.maxretrytime}" />
+						<constructor-arg name="socketTimeOut" value="${mongo.db.sockettimeout}" />
+					</bean>
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+</beans>
