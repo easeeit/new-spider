@@ -15,9 +15,76 @@
 	    <property name="config">
 	        <list>
 	            <map>
-	                <entry key="url">http://ps4.tgbus.com/news/</entry>
-	                <entry key="regexList"><![CDATA[<div class="list"><ul>(.+?)</ul></div>]]></entry>
-	                <entry key="regexUrl"><![CDATA[<li><cite>.*?</cite>.*?<a href="([^"]*)".*?</a>.*?</li>]]></entry>
+	                <entry key="name" value="电玩巴士ps4" />
+	                <entry key="url" value="http://ps4.tgbus.com/news/" />
+	                <entry key="regexList" value='&lt;div class="list"&gt;&lt;ul&gt;(.+?)&lt;/ul&gt;&lt;/div&gt;' />
+	                <entry key="regexUrl" value='&lt;li&gt;&lt;cite&gt;.*?&lt;/cite&gt;.*?&lt;a href="([^"]*)".*?&lt;/a&gt;.*?&lt;/li&gt;' />
+	                <entry key="urlPrefix" value=''/>
+	                <entry key="regexContent" value=''/>
+	                <entry key="regexImg" value=''/>
+	            </map>
+	            <map>
+	                <entry key="name" value="电玩巴士xbone" />
+	                <entry key="url" value="http://xboxone.tgbus.com/news/" />
+	                <entry key="regexList" value='&lt;div class="list"&gt;&lt;ul&gt;(.+?)&lt;/ul&gt;&lt;/div&gt;' />
+	                <entry key="regexUrl" value='&lt;li&gt;&lt;cite&gt;.*?&lt;/cite&gt;.*?&lt;a href="([^"]*)".*?&lt;/a&gt;.*?&lt;/li&gt;' />
+	                <entry key="urlPrefix" value=''/>
+	                <entry key="regexContent" value=''/>
+	                <entry key="regexImg" value=''/>
+	            </map>
+	            <map>
+	                <entry key="name" value="电玩之家xbone" />
+	                <entry key="url" value="http://www.gamehome.tv/Article/xbox360/news/" />
+	                <entry key="regexList" value='&lt;div class=\"list_loop\"&gt;(.+)&lt;/div&gt;' />
+	                <entry key="regexUrl" value='&lt;div class=\"list_title\"&gt;&lt;a href=\"([^\"]*)\".*?&lt;/a&gt;&lt;/div&gt;' />
+	                <entry key="urlPrefix" value=''/>
+	                <entry key="regexContent" value=''/>
+	                <entry key="regexImg" value=''/>
+	            </map>
+	            <map>
+	                <entry key="name" value="电玩之家ps4" />
+	                <entry key="url" value="http://www.gamehome.tv/Article/ps4/news/" />
+	                <entry key="regexList" value='&lt;div class=\"list_loop\"&gt;(.+)&lt;/div&gt;' />
+	                <entry key="regexUrl" value='&lt;div class=\"list_title\"&gt;&lt;a href=\"([^\"]*)\".*?&lt;/a&gt;&lt;/div&gt;' />
+	                <entry key="urlPrefix" value=''/>
+	                <entry key="regexContent" value=''/>
+	                <entry key="regexImg" value=''/>
+	            </map>
+	            <map>
+	                <entry key="name" value="多玩ps4" />
+	                <entry key="url" value="http://tv.duowan.com/tag/225381878701.html" />
+	                <entry key="regexList" value='&lt;div id=\"list-page\"&gt;(.+)&lt;/div&gt;' />
+	                <entry key="regexUrl" value='&lt;li&gt;&lt;span&gt;.*?&lt;/span&gt;&lt;a href=\"([^\"]*)\".*?&lt;/a&gt;&lt;/li&gt;' />
+	                <entry key="urlPrefix" value=''/>
+	                <entry key="regexContent" value=''/>
+	                <entry key="regexImg" value=''/>
+	            </map>
+	            <map>
+	                <entry key="name" value="多玩xbone" />
+	                <entry key="url" value="http://tv.duowan.com/tag/233158035832.html" />
+	                <entry key="regexList" value='&lt;div id=\"list-page\"&gt;(.+)&lt;/div&gt;' />
+	                <entry key="regexUrl" value='&lt;li&gt;&lt;span&gt;.*?&lt;/span&gt;&lt;a href=\"([^\"]*)\".*?&lt;/a&gt;&lt;/li&gt;' />
+	                <entry key="urlPrefix" value='http://tv.duowan.com'/>
+	                <entry key="regexContent" value=''/>
+	                <entry key="regexImg" value=''/>
+	            </map>
+	            <map>
+	                <entry key="name" value="新浪ps4" />
+	                <entry key="url" value="http://e.games.sina.com.cn/t/news_list/ps4/" />
+	                <entry key="regexList" value='&lt;ul class=\"hp_newslist\"&gt;(.+?)&lt;/ul&gt;' />
+	                <entry key="regexUrl" value='&lt;li&gt;.*?&lt;a href=\"([^\"]*)\".*?&lt;/a&gt;.*?&lt;/li&gt;' />
+	                <entry key="urlPrefix" value='' />
+	                <entry key="regexContent" value=''/>
+	                <entry key="regexImg" value=''/>
+	            </map>
+	            <map>
+	                <entry key="name" value="新浪xbone" />
+	                <entry key="url" value="http://e.games.sina.com.cn/t/news_list/xboxone/" />
+	                <entry key="regexList" value='&lt;ul class=\"hp_newslist\"&gt;(.+?)&lt;/ul&gt;' />
+	                <entry key="regexUrl" value='&lt;li&gt;.*?&lt;a href=\"([^\"]*)\".*?&lt;/a&gt;.*?&lt;/li&gt;' />
+	                <entry key="urlPrefix" value='' />
+	                <entry key="regexContent" value=''/>
+	                <entry key="regexImg" value=''/>
 	            </map>
 	        </list>
 	    </property>
